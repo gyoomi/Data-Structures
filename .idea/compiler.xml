@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <option name="BUILD_PROCESS_HEAP_SIZE" value="1300" />
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="01-Set-Basics-and-BSTSet" />
+        <module name="02-LinkedListSet" />
+        <module name="03-Time-Complexity-of-Set" />
+        <module name="04-TreeSet-and-Set-Problem-in-LeetCode" />
+        <module name="05-Map-Basics" />
+        <module name="06-LinkedListMap" />
+        <module name="Learning-Data-Structures" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
