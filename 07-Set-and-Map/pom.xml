@@ -22,6 +22,7 @@
         <module>04-TreeSet-and-Set-Problem-in-LeetCode</module>
         <module>05-Map-Basics</module>
         <module>06-LinkedListMap</module>
+        <module>07-BSTMap</module>
     </modules>
 
 
