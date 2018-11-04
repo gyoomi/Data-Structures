@@ -23,6 +23,7 @@
         <module>05-Map-Basics</module>
         <module>06-LinkedListMap</module>
         <module>07-BSTMap</module>
+        <module>08-More-about-Map</module>
     </modules>
 
 
