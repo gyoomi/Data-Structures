@@ -17,6 +17,8 @@
         <module>04-Extract-And-Sift-Down-in-Heap</module>
         <module>05-Heapify-and-Replace-in-Heap</module>
         <module>06-Priority-Queue</module>
+        <module>07-Priority-Queue-Problem-in-Leetcode</module>
+        <module>08-Priority-Queue-in-Java</module>
     </modules>
 
 
