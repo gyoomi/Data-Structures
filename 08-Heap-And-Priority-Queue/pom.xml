@@ -16,6 +16,7 @@
         <module>03-Add-And-Sift-Up-in-Heap</module>
         <module>04-Extract-And-Sift-Down-in-Heap</module>
         <module>05-Heapify-and-Replace-in-Heap</module>
+        <module>06-Priority-Queue</module>
     </modules>
 
 
