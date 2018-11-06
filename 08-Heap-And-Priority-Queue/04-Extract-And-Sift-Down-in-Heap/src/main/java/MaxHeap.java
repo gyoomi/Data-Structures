@@ -94,7 +94,7 @@ public class MaxHeap<E extends Comparable<E>> {
         E ret = findMax();
         data.swap(0, data.getSize() - 1);
         data.removeLast();
-        siftUp(0);
+        siftDown(0);
         return ret;
     }
 
