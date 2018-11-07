@@ -8,12 +8,23 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="01-Set-Basics-and-BSTSet" />
+        <module name="02-Heap-Basics" />
         <module name="02-LinkedListSet" />
+        <module name="02-Segment-Tree-Basics" />
+        <module name="03-Add-And-Sift-Up-in-Heap" />
+        <module name="03-Building-Segment-Tree" />
         <module name="03-Time-Complexity-of-Set" />
+        <module name="04-Extract-And-Sift-Down-in-Heap" />
+        <module name="04-Query-in-Segment-Tree" />
         <module name="04-TreeSet-and-Set-Problem-in-LeetCode" />
+        <module name="05-Heapify-and-Replace-in-Heap" />
         <module name="05-Map-Basics" />
         <module name="06-LinkedListMap" />
-        <module name="Learning-Data-Structures" />
+        <module name="06-Priority-Queue" />
+        <module name="07-BSTMap" />
+        <module name="07-Priority-Queue-Problem-in-Leetcode" />
+        <module name="08-More-about-Map" />
+        <module name="08-Priority-Queue-in-Java" />
       </profile>
     </annotationProcessing>
   </component>

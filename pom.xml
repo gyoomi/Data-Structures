@@ -16,5 +16,6 @@
     <modules>
         <module>07-Set-and-Map</module>
         <module>08-Heap-And-Priority-Queue</module>
+        <module>09-Segment-Tree</module>
     </modules>
 </project>
