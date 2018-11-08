@@ -19,8 +19,10 @@
         <module name="04-TreeSet-and-Set-Problem-in-LeetCode" />
         <module name="05-Heapify-and-Replace-in-Heap" />
         <module name="05-Map-Basics" />
+        <module name="05-Problem-of-Segment-Tree-in-Leetcode" />
         <module name="06-LinkedListMap" />
         <module name="06-Priority-Queue" />
+        <module name="06-Update-Single-In-Segment-Tree" />
         <module name="07-BSTMap" />
         <module name="07-Priority-Queue-Problem-in-Leetcode" />
         <module name="08-More-about-Map" />
