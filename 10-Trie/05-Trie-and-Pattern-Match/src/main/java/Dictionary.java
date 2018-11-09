@@ -34,6 +34,9 @@ public class Dictionary {
     }
 
     public boolean search(String word) {
+        if (word == null || word.length() < 1) {
+            return false;
+        }
         return match(root, word, 0);
     }
 
@@ -48,7 +51,7 @@ public class Dictionary {
             }
             return match(node.next.get(c), word, index + 1);
         } else {
-            for (Character nextChar : node.next.keySet()) {
+            for (char nextChar : node.next.keySet()) {
                 if (match(node.next.get(nextChar), word, index + 1)) {
                     return true;
                 }
