@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="01-Set-Basics-and-BSTSet" />
         <module name="01-What-is-Union-Find" />
+        <module name="02-Calculating-Balance-Factor" />
         <module name="02-Heap-Basics" />
         <module name="02-LinkedListSet" />
         <module name="02-Quick-Find" />

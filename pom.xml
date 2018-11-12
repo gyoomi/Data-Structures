@@ -19,5 +19,6 @@
         <module>09-Segment-Tree</module>
         <module>10-Trie</module>
         <module>11-Union-Find</module>
+        <module>12-AVL-Tree</module>
     </modules>
 </project>
