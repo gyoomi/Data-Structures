@@ -30,6 +30,7 @@
         <module name="05-Problem-of-Segment-Tree-in-Leetcode" />
         <module name="05-Trie-and-Pattern-Match" />
         <module name="06-LinkedListMap" />
+        <module name="06-Path-Compression" />
         <module name="06-Priority-Queue" />
         <module name="06-Trie-and-Map" />
         <module name="06-Update-Single-In-Segment-Tree" />
