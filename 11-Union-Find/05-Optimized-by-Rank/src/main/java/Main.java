@@ -1,5 +1,5 @@
 /**
- * Copyright © 2018, LeonKeh
+ * Copyright © 2018, TaoDing
  * <p>
  * All Rights Reserved.
  */
@@ -10,7 +10,7 @@ import java.util.Random;
  * 类功能描述
  *
  * @author Leon
- * @version 2018/11/10 20:26
+ * @version 2018/11/12 11:31
  */
 public class Main {
 
@@ -40,17 +40,11 @@ public class Main {
     }
 
     public static void main(String[] args) {
-
-        // UnionFind1 慢于 UnionFind3
-//        int size = 100000;
-//        int m = 10000;
-
-        // UnionFind3 慢于 UnionFind1, 但UnionFind3最快
         int size = 100000;
-        int m = 1000000;
+        int m = 10000000;
 
-        UnionFind3 uf = new UnionFind3(size);
-        System.out.println("UnionFind3 : " + testUF(uf, m) + " s");
+        UnionFind uf = new UnionFind(size);
+        System.out.println("UnionFind : " + testUF(uf, m) + " s");
 
     }
 }

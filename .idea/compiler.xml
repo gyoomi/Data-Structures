@@ -26,6 +26,7 @@
         <module name="04-TreeSet-and-Set-Problem-in-LeetCode" />
         <module name="05-Heapify-and-Replace-in-Heap" />
         <module name="05-Map-Basics" />
+        <module name="05-Optimized-by-Rank" />
         <module name="05-Problem-of-Segment-Tree-in-Leetcode" />
         <module name="05-Trie-and-Pattern-Match" />
         <module name="06-LinkedListMap" />
