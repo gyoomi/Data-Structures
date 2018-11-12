@@ -16,5 +16,7 @@ public class Main {
         UnionFind uf = new UnionFind(10);
         uf.unionElements(1, 2);
         uf.unionElements(2, 8);
+        uf.unionElements(2, 5);
+        System.out.println(uf);
     }
 }
