@@ -19,6 +19,7 @@
         <module>04-Rotation-Operations</module>
         <module>05-The-Implementation-Left-Rotation-Right-Rotation</module>
         <module>06-LR-and-RL</module>
+        <module>07-Remove-Elements-In-AVLTree</module>
     </modules>
 
 

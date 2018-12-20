@@ -229,39 +229,61 @@ public class AVLTree<K extends Comparable<K>, V> {
         if( node == null ) {
             return null;
         }
-
+        Node retNode;
         if( key.compareTo(node.key) < 0 ) {
             node.left = remove(node.left , key);
-            return node;
+            retNode = node;
         } else if (key.compareTo(node.key) > 0 ) {
             node.right = remove(node.right, key);
-            return node;
+            retNode = node;
         } else { // key.compareTo(node.key) == 0
 
             // 待删除节点左子树为空的情况
-            if(node.left == null){
+            if(node.left == null) {
                 Node rightNode = node.right;
                 node.right = null;
-                size --;
-                return rightNode;
-            }
-
-            // 待删除节点右子树为空的情况
-            if(node.right == null){
+                size--;
+                retNode = rightNode;
+            } else if(node.right == null) { // 待删除节点右子树为空的情况
                 Node leftNode = node.left;
                 node.left = null;
-                size --;
-                return leftNode;
+                size--;
+                retNode = leftNode;
+            } else {
+
+                Node successor = minimum(node.right);
+                // 注意这里有个小bug
+                successor.right = removeMin(node.right);
+                successor.left = node.left;
+
+                node.left = node.right = null;
+
+                retNode = successor;
             }
-
-            Node successor = minimum(node.right);
-            successor.right = removeMin(node.right);
-            successor.left = node.left;
-
-            node.left = node.right = null;
-
-            return successor;
         }
+
+        if (null == retNode) {
+            return null;
+        }
+
+        // update height
+        retNode.height = Math.max(getHeight(retNode.left), getHeight(retNode.right)) + 1;
+        //calculate the factor of balance
+        var balanceFactor = getBalanceFactor(retNode);
+        // LL
+        if (balanceFactor > 1 && getBalanceFactor(retNode.left) >= 0) {
+            return rightRotate(retNode);
+        }
+        // RR
+        if (balanceFactor < -1 && getBalanceFactor(retNode.right) >= 0) {
+            return leftRotate(retNode);
+        }
+        // LR
+        if (balanceFactor > 1 && getBalanceFactor(retNode.left) < 0) {
+            retNode.left =;
+        }
+        // RL
+        return retNode;
     }
 
     private class Node {
