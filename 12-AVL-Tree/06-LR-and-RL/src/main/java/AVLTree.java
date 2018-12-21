@@ -253,7 +253,8 @@ public class AVLTree<K extends Comparable<K>, V> {
 
                 Node successor = minimum(node.right);
                 // 注意这里有个小bug
-                successor.right = removeMin(node.right);
+                // successor.right = removeMin(node.right);
+                successor.right = remove(node.right, successor.key);
                 successor.left = node.left;
 
                 node.left = node.right = null;
@@ -275,14 +276,19 @@ public class AVLTree<K extends Comparable<K>, V> {
             return rightRotate(retNode);
         }
         // RR
-        if (balanceFactor < -1 && getBalanceFactor(retNode.right) >= 0) {
+        if (balanceFactor < -1 && getBalanceFactor(retNode.right) <= 0) {
             return leftRotate(retNode);
         }
         // LR
         if (balanceFactor > 1 && getBalanceFactor(retNode.left) < 0) {
-            retNode.left =;
+            retNode.left = leftRotate(retNode.left);
+            return rightRotate(retNode);
         }
         // RL
+        if (balanceFactor < -1 && getBalanceFactor(retNode.right) > 0) {
+            retNode.right = rightRotate(retNode.right);
+            return leftRotate(retNode);
+        }
         return retNode;
     }
 
@@ -322,6 +328,14 @@ public class AVLTree<K extends Comparable<K>, V> {
 
             System.out.println("is BST : " + map.isBST());
             System.out.println("is Balanced : " + map.isBalanced());
+
+            for(String word: words){
+                map.remove(word);
+                if (!map.isBST() || !map.isBalanced()) {
+                    throw new RuntimeException();
+                }
+            }
+            System.out.println();
         }
 
         System.out.println();
