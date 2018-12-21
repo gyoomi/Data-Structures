@@ -3,20 +3,15 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>Learning-Data-Structures</artifactId>
+        <artifactId>14-Hash-Table</artifactId>
         <groupId>com.gyoomi</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.gyoomi</groupId>
-    <artifactId>14-Hash-Table</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>03-Hash-Function-In-Java</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>01-Hash-Table-Basics</module>
-        <module>03-Hash-Function-In-Java</module>
-    </modules>
 
 
 </project>
