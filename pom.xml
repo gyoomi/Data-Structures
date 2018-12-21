@@ -20,5 +20,6 @@
         <module>10-Trie</module>
         <module>11-Union-Find</module>
         <module>12-AVL-Tree</module>
+        <module>14-Hash-Table</module>
     </modules>
 </project>
