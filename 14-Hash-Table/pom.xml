@@ -18,6 +18,7 @@
         <module>03-Hash-Function-In-Java</module>
         <module>05-HashTable-Implementation</module>
         <module>06-Resizing-in-Hash-Table</module>
+        <module>07-More-About-in-Resizing-Hash-Table</module>
     </modules>
 
 
