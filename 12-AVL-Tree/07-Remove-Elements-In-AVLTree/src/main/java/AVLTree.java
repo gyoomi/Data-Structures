@@ -73,7 +73,7 @@ public class AVLTree<K extends Comparable<K>, V> {
         if (null == node) {
             return true;
         }
-        var balanceFactor = getBalanceFactor(node);
+        int balanceFactor = getBalanceFactor(node);
         if (Math.abs(balanceFactor) > 1) {
             return false;
         }
@@ -270,7 +270,7 @@ public class AVLTree<K extends Comparable<K>, V> {
         // update height
         retNode.height = Math.max(getHeight(retNode.left), getHeight(retNode.right)) + 1;
         //calculate the factor of balance
-        var balanceFactor = getBalanceFactor(retNode);
+        int balanceFactor = getBalanceFactor(retNode);
         // LL
         if (balanceFactor > 1 && getBalanceFactor(retNode.left) >= 0) {
             return rightRotate(retNode);

@@ -73,13 +73,21 @@ public class AVLTree<K extends Comparable<K>, V> {
         if (null == node) {
             return true;
         }
-        var balanceFactor = getBalanceFactor(node);
+        int balanceFactor = getBalanceFactor(node);
         if (Math.abs(balanceFactor) > 1) {
             return false;
         }
         return isBalanced(node.left) && isBalanced(node.right);
     }
 
+    // 对节点y进行向右旋转操作，返回旋转后新的根节点x
+    //        y                              x
+    //       / \                           /   \
+    //      x   T4     向右旋转 (y)        z     y
+    //     / \       - - - - - - - ->    / \   / \
+    //    z   T3                       T1  T2 T3 T4
+    //   / \
+    // T1   T2
     private Node rightRotate(Node node) {
         Node retNode = node.left;
         Node tmpNode = retNode.right;
@@ -87,13 +95,21 @@ public class AVLTree<K extends Comparable<K>, V> {
         retNode.right = node;
         node.left = tmpNode;
         // update the height of nodes
-        retNode.height = Math.max(getHeight(retNode.left), getHeight(retNode.right)) + 1;
         node.height = Math.max(getHeight(node.right), getHeight(node.left)) + 1;
+        retNode.height = Math.max(getHeight(retNode.left), getHeight(retNode.right)) + 1;
 
         return retNode;
     }
 
 
+    // 对节点y进行向左旋转操作，返回旋转后新的根节点x
+    //    y                             x
+    //  /  \                          /   \
+    // T1   x      向左旋转 (y)       y     z
+    //     / \   - - - - - - - ->   / \   / \
+    //   T2  z                     T1 T2 T3 T4
+    //      / \
+    //     T3 T4
     private Node leftRotate(Node node) {
         Node retNode = node.right;
         Node tmpNode = retNode.left;
@@ -101,8 +117,8 @@ public class AVLTree<K extends Comparable<K>, V> {
         retNode.left = node;
         node.right = tmpNode;
         // update the height of nodes
-        retNode.height = Math.max(getHeight(retNode.left), getHeight(retNode.right)) + 1;
         node.height = Math.max(getHeight(node.left), getHeight(node.right)) + 1;
+        retNode.height = Math.max(getHeight(retNode.left), getHeight(retNode.right)) + 1;
 
         return retNode;
     }
