@@ -16,6 +16,9 @@
     <modules>
         <module>03-The-Equivalence-of-RBTree-and-2-3-Tree</module>
         <module>05-Keep-Root-Black-and-Left-Rotation</module>
+        <module>06-Flip-Color-and-Right-Rotation</module>
+        <module>07-Adding-in-Red-Black-Tree</module>
+        <module>08-The-Performance-of-Red-Black-Tree</module>
     </modules>
 
 

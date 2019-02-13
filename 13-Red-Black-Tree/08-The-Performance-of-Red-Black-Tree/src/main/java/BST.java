@@ -1,41 +1,24 @@
-/**
- * Copyright © 2019, LeonKeh
- * <p>
- * All Rights Reserved.
- */
-
 import java.util.ArrayList;
 
-/**
- * 类功能描述
- *
- * @author Leon
- * @version 2019/2/13 17:40
- */
-public class RBTree<K extends Comparable<K>, V> {
-
-    private static final boolean RED = true;
-    private static final boolean BLACK = false;
+public class BST<K extends Comparable<K>, V> {
 
     private class Node{
         public K key;
         public V value;
         public Node left, right;
-        public boolean color;
 
         public Node(K key, V value){
             this.key = key;
             this.value = value;
             left = null;
             right = null;
-            color = RED;
         }
     }
 
     private Node root;
     private int size;
 
-    public RBTree(){
+    public BST(){
         root = null;
         size = 0;
     }
@@ -48,51 +31,9 @@ public class RBTree<K extends Comparable<K>, V> {
         return size == 0;
     }
 
-    /**
-     * 判断节点的颜色
-     *
-     * @param node
-     * @return
-     */
-    private boolean isRed(Node node) {
-        if (null == node) {
-            return BLACK;
-        }
-        return node.color;
-    }
-
-    /**
-     * 左旋转
-     *
-     *     node                     x
-     *    /   \     左旋转         /  \
-     *   T1   x   --------->   node   T3
-     *       / \              /   \
-     *      T2 T3            T1   T2
-     *
-     * @param node
-     * @return
-     */
-    private Node leftRotate(Node node) {
-        Node x = node.right;
-        // 左旋转
-        node.right = x.left;
-        x.left = node;
-
-        x.color = node.color;
-        node.color = RED;
-        return x;
-    }
-
-    /**
-     * 向红黑树中添加新的元素(key, value)
-     *
-     * @param key
-     * @param value
-     */
+    // 向二分搜索树中添加新的元素(key, value)
     public void add(K key, V value){
         root = add(root, key, value);
-        root.color = BLACK;
     }
 
     // 向以node为根的二分搜索树中插入元素(key, value)，递归算法
@@ -140,18 +81,16 @@ public class RBTree<K extends Comparable<K>, V> {
 
     public void set(K key, V newValue){
         Node node = getNode(root, key);
-        if (node == null) {
+        if(node == null)
             throw new IllegalArgumentException(key + " doesn't exist!");
-        }
 
         node.value = newValue;
     }
 
     // 返回以node为根的二分搜索树的最小值所在的节点
     private Node minimum(Node node){
-        if (node.left == null) {
+        if(node.left == null)
             return node;
-        }
         return minimum(node.left);
     }
 
@@ -234,7 +173,7 @@ public class RBTree<K extends Comparable<K>, V> {
         if(FileOperation.readFile("pride-and-prejudice.txt", words)) {
             System.out.println("Total words: " + words.size());
 
-            RBTree<String, Integer> map = new RBTree<>();
+            BST<String, Integer> map = new BST<>();
             for (String word : words) {
                 if (map.contains(word))
                     map.set(word, map.get(word) + 1);

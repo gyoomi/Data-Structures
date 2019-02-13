@@ -85,6 +85,41 @@ public class RBTree<K extends Comparable<K>, V> {
     }
 
     /**
+     * 右旋转
+     *
+     *         node                   x
+     *        /   \     右旋转       /  \
+     *       x    T2   ------->   y   node
+     *      / \                       /  \
+     *     y  T1                     T1  T2
+     *
+     * @param node
+     * @return
+     */
+    private Node rightRotate(Node node) {
+        Node x = node.left;
+
+        // 右旋转
+        node.left = x.right;
+        x.right = node;
+
+        x.color = node.color;
+        node.color = RED;
+        return x;
+    }
+
+    /**
+     * 颜色翻转
+     *
+     * @param node
+     */
+    private void flipColor(Node node) {
+        node.color = RED;
+        node.left.color = BLACK;
+        node.right.color = BLACK;
+    }
+
+    /**
      * 向红黑树中添加新的元素(key, value)
      *
      * @param key
@@ -97,10 +132,20 @@ public class RBTree<K extends Comparable<K>, V> {
 
     // 向以node为根的二分搜索树中插入元素(key, value)，递归算法
     // 返回插入新节点后二分搜索树的根
+
+    /**
+     * 向以node为根的红黑树中插入元素(key, value)，递归算法
+     *
+     * @param node
+     * @param key
+     * @param value
+     * @return  返回新插入节点后的红黑树根
+     */
     private Node add(Node node, K key, V value){
 
         if(node == null){
-            size ++;
+            size++;
+            // 默认插入红色节点
             return new Node(key, value);
         }
 
@@ -111,6 +156,15 @@ public class RBTree<K extends Comparable<K>, V> {
         else // key.compareTo(node.key) == 0
             node.value = value;
 
+        if (isRed(node.right) && !isRed(node.left)) {
+            node = leftRotate(node);
+        }
+        if (isRed(node.left) && isRed(node.left.left)) {
+            node = rightRotate(node);
+        }
+        if (isRed(node.left) && isRed(node.right)) {
+            flipColor(node);
+        }
         return node;
     }
 
@@ -231,7 +285,7 @@ public class RBTree<K extends Comparable<K>, V> {
         System.out.println("Pride and Prejudice");
 
         ArrayList<String> words = new ArrayList<>();
-        if(FileOperation.readFile("pride-and-prejudice.txt", words)) {
+        if(FileOperation.readFile("d:\\pride-and-prejudice.txt", words)) {
             System.out.println("Total words: " + words.size());
 
             RBTree<String, Integer> map = new RBTree<>();
