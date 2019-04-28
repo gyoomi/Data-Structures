@@ -22,5 +22,6 @@
         <module>12-AVL-Tree</module>
         <module>14-Hash-Table</module>
         <module>13-Red-Black-Tree</module>
+        <module>15-BTree</module>
     </modules>
 </project>
